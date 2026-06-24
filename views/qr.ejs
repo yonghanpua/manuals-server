@@ -1,0 +1,39 @@
+<%- include("partials/head", {
+  title: "QR — " + name,
+  extraStyles: `
+    body { display: flex; flex-direction: column; }
+    nav { border-bottom: 1px solid var(--border); padding: 0.9rem 1.25rem; }
+    main { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem 1rem; }
+    .qr-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem 2rem; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; max-width: 380px; width: 100%; }
+    .qr-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+    .qr-img-wrap { background: #fff; border-radius: 12px; padding: 1rem; }
+    .qr-img-wrap img { display: block; width: 220px; height: 220px; }
+    .qr-name { font-size: 1.1rem; font-weight: 500; text-transform: capitalize; text-align: center; }
+    .qr-url { font-family: "IBM Plex Mono", monospace; font-size: 0.65rem; color: var(--muted); background: var(--tag); padding: 0.5rem 0.75rem; border-radius: 6px; word-break: break-all; text-align: center; width: 100%; }
+    .actions { display: flex; gap: 0.75rem; width: 100%; }
+    .actions .btn { flex: 1; padding: 0.6rem 1rem; border-radius: 8px; font-size: 0.82rem; }
+    @media print { nav, .actions { display: none; } body { background: white; } }
+  `
+}) %>
+
+<nav>
+  <a href="/" class="back">&#8592; All Manuals</a>
+</nav>
+
+<main>
+  <div class="qr-card">
+    <span class="qr-label">Scan to open manual</span>
+    <div class="qr-img-wrap">
+      <img src="<%= qrDataUrl %>" alt="QR code for <%= name %>"/>
+    </div>
+    <p class="qr-name"><%= name %></p>
+    <p class="qr-url"><%= viewUrl %></p>
+    <div class="actions">
+      <a href="<%= viewUrl %>" class="btn btn-primary">Open Manual</a>
+      <button class="btn btn-secondary" onclick="window.print()">Print QR</button>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

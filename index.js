@@ -4,6 +4,7 @@ const path = require("path");
 
 const homeRouter = require("./routes/home");
 const viewerRouter = require("./routes/viewer");
+const qrRouter = require("./routes/qr");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -15,6 +16,7 @@ app.set("views", path.join(__dirname, "views"));
 app.use("/pdfs", express.static(PDF_DIR));
 app.use("/", homeRouter);
 app.use("/", viewerRouter);
+app.use("/", qrRouter);
 
 app.listen(PORT, "0.0.0.0", () => {
   const { getLocalIP } = require("./utils/network");

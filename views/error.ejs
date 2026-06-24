@@ -1,0 +1,18 @@
+html<%- include("partials/head", {
+  title: "Not Found",
+  extraStyles: `
+    body { display: flex; align-items: center; justify-content: center; }
+    .error { text-align: center; }
+    .error h1 { font-size: 3rem; font-weight: 600; color: var(--accent); }
+    .error p { color: var(--muted); margin: 0.5rem 0 1.5rem; }
+  `
+}) %>
+
+<div class="error">
+  <h1>404</h1>
+  <p><%= message %></p>
+  <a href="/" class="btn btn-primary">Back to Manuals</a>
+</div>
+
+</body>
+</html>
