@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      :root{
+        --bg: #0f1117; --surface: #181c27; --border: #252a38;
+        --accent: #3b82f6; --text: #e8eaf0; --muted: #6b7280;
+        --tag: #1e2535; --radius: 10px;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "IBM Plex Sans", sans-serif;
+        font-weight: 300;
+        min-height: 100vh;
+      }
+      .back {
+        color: var(--accent);
+        text-decoration: none;
+        font-size: 0.85rem;
+      }
+      .back:hover {
+        text-decoration: underline;
+      }
+      .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.45rem 0.9rem; border-radius: 6px; font-size: 0.8rem; font-weight: 500; text-decoration: none; transition: background 0.15s; white-space: nowrap; cursor: pointer; border: none; font-family: inherit;}
+      .btn-primary { background: var(--accent); color: #fff;}
+      .btn-primary:hover { background: #2563eb; }
+      .btn-secondary { background: var(--tag); color: var(--text); border: 1px solid var(--border)}
+      .btn-secondary:hover { background: var(--border); }
+      <%- extraStyles %>
+    </style>
+  </head>
+  <body></body>
+</html>
